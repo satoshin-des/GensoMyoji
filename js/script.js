@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById("search-input");
   const btn = document.getElementById("search-btn");
-  const resTab = document.getElementById('search-res');
-  const jsonPath = "{{ '/json/myoji-data.json' | relative_url }}";
+  const tbody = document.getElementById('search-res');
+  const jsonPath = btn.dataset.jsonUrl;
   
   let cachedDat = null; // data for cache
 
   async function search() {
     const q = input.value.trim();
-    resTab.innerHTML = '';
+    tbody.innerHTML = '';
 
     if (!q) {
       return;
@@ -25,6 +25,24 @@ document.addEventListener('DOMContentLoaded', () => {
       resTab.innerHTML = '';
       return;
     }
+
+    m.forEach(e => {
+      const tr = document.createElement('tr');
+
+      const tdMyoji = document.createElement('td');
+      tdMyoji.textContent = e.name;
+    
+      tr.appendChild(tdMyoji);
+
+      const ys = e.ruby;
+      ys.forEach(d => {
+        tdYomi = document.createElement('td');
+        tdYomi.textContent = d;
+        tr.appendChild(tdYomi);
+      });
+
+      tbody.appendChild(tr);
+    });
   }
 
   btn.addEventListener('click', search);

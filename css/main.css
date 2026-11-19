@@ -92,3 +92,24 @@ button {
     border-radius: 3px;
     padding: 0.5rem;
 }
+
+table {
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: black;
+}
+
+td, th {
+  border: 4px double black;
+  margin: 2px;
+  padding: 0.5rem;
+}
+
+/* table style */
+.table {
+  margin-top: 1rem;
+  border-width: 2px;
+  border-color: black;
+  padding: 3px;
+}
+
