@@ -108,8 +108,6 @@ td, th {
 /* table style */
 .table {
   margin-top: 1rem;
-  border-width: 2px;
-  border-color: black;
   padding: 3px;
 }
 
