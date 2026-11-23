@@ -1,26 +1,56 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>幻想苗字検索ツール</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{'/css/destyle.min.css' | relative_url}}">
+    <link rel="stylesheet" href="{{'/css/main.css' | relative_url}}">
+</head>
 
-<h1>幻想苗字検索ツール</h1>
-<p>文字列を入力し，「検索」ボタンを押すことで，様々な幻想苗字が検索できます．</p>
+<body>
+    <header class="header">
+        <div class="fixed">
+            <div style="display: flex;">
+                <h1><a href="/GensoMyoji/">幻想苗字検索ツール</a></h1>
+            </div>
+        </div>
+    </header>
 
-<input type="text" id="search-input" placeholder="佐藤">
-<button type="button" id="search-btn" data-json-url="{{ '/json/myoji-data.json' | relative_url }}">検索</button>
+    <main>
+        <h1>幻想苗字検索ツール</h1>
+        <p>文字列を入力し，「検索」ボタンを押すことで，様々な幻想苗字が検索できます．</p>
 
-<div class="table">
-<table>
-  <thead>
-    <tr>
-      <th class="cell">苗字</th>
-      <th class="cell">読み１</th>
-      <th class="cell">読み２</th>
-      <th class="cell">読み３</th>
-    </tr>
-  </thead>
-  <tbody id="search-res">
-  </tbody>
-</table>
-</div>
+        <input type="text" id="search-input" placeholder="佐藤">
+        <button type="button" id="search-btn" data-json-url="{{ '/json/myoji-data.json' | relative_url }}">検索</button>
 
-<script src="{{ '/js/script.js' | relative_url }}"></script>
+        <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th class="cell">苗字</th>
+                    <th class="cell">読み１</th>
+                    <th class="cell">読み２</th>
+                    <th class="cell">読み３</th>
+                </tr>
+            </thead>
+            <tbody id="search-res">
+            </tbody>
+        </table>
+        </div>
+
+        <script src="{{ '/js/script.js' | relative_url }}"></script>
+    </main>
+
+    <footer class="footer">
+        <ul class="footer-nav">
+            <li><i class="fa-brands fa-twitter"></i> <a href="https://x.com/satoshin_NCD">Twitter</a></li>
+            <li><i class="fa-brands fa-github"></i> <a href="https://github.com/satoshin-des">GitHub</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
+
+
+
